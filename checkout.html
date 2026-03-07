@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - FashionHub</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/0e53af926d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="header">
+            <div class="header-logo">
+                <a href="index.html"><img src="images/logo.png" alt="FashionHub Logo" /></a>
+            </div>
+            <div class="header-list">
+                <nav class="header-list-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-list-icon">
+                    <a href="cart.html"><i class="fa fa-bag-shopping"></i><span class="cart-count">0</span></a>
+                    <a href="login.html"><i class="fa fa-user"></i></a>
+                </div>
+            </div>
+            <div class="mobile-menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="page-header" class="checkout-header">
+            <h2>#checkout</h2>
+            <p>Complete your purchase</p>
+        </section>
+
+        <section id="checkout" class="section-p1">
+            <div id="checkout-container">
+                <div id="checkout-form-container">
+                    <h2>Shipping Information</h2>
+                    <form id="checkout-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Street Address *</label>
+                            <input type="text" id="address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="apartment">Apartment, Suite, etc. (optional)</label>
+                            <input type="text" id="apartment">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State *</label>
+                                <select id="state" required>
+                                    <option value="">Select State</option>
+                                    <option value="NY">New York</option>
+                                    <option value="CA">California</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="IL">Illinois</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="zip">ZIP Code *</label>
+                                <input type="text" id="zip" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country *</label>
+                                <select id="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US" selected>United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="UK">United Kingdom</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <h2 style="margin-top: 30px;">Payment Method</h2>
+                        
+                        <div class="payment-methods">
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="credit" checked>
+                                <i class="fa fa-credit-card"></i> Credit Card
+                            </label>
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="paypal">
+                                <i class="fa fa-paypal"></i> PayPal
+                            </label>
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="cash">
+                                <i class="fa fa-money"></i> Cash on Delivery
+                            </label>
+                        </div>
+                        
+                        <div id="credit-card-details">
+                            <div class="form-group">
+                                <label for="card-name">Name on Card</label>
+                                <input type="text" id="card-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry">Expiry Date</label>
+                                    <input type="text" id="expiry" placeholder="MM/YY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" placeholder="123">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div id="order-summary">
+                    <h3>Your Order</h3>
+                    <div id="order-items"></div>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="order-subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span id="order-shipping">$5.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (10%):</span>
+                        <span id="order-tax">$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="order-total">$0.00</span>
+                    </div>
+                    <button class="normal" id="place-order-btn" style="width: 100%; margin-top: 20px;">Place Order</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer">
+            <div class="contact">
+                <a href="index.html"><img src="images/logo.png" alt="FashionHub Logo" /></a>
+                <br><br>
+                <h3>Contact</h3>
+                <address>
+                    <p><b>Address:</b> 123 Fashion Street, New York, NY 10001</p>
+                    <p><b>Phone:</b> +1 (555) 123-4567</p>
+                    <p><b>Hours:</b> 10:00 - 18:00, Mon - Sat</p>
+                </address>
+                <h3>Follow Us</h3>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="about">
+                <h3>About</h3>
+                <a href="about.html">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="myaccount">
+                <h3>My account</h3>
+                <a href="login.html">Sign In</a>
+                <a href="cart.html">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="order-tracking.html">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+            <div class="install">
+                <h3>Install App</h3>
+                <p>From App Store or Google Play</p>
+                <div class="download">
+                    <a href="#"><img src="images/pay/app.jpg" alt="App Store"></a>
+                    <a href="#"><img src="images/pay/play.jpg" alt="Google Play"></a>
+                </div>
+                <p>Secured Payment Gateways</p>
+                <img src="images/pay/pay.png" alt="Payment Methods">
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 FashionHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

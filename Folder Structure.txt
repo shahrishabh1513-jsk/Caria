@@ -1,0 +1,91 @@
+ecommerce-website/
+│
+├── index.html
+├── shop.html
+├── blog.html
+├── about.html
+├── contact.html
+├── login.html
+├── register.html
+├── cart.html
+├── checkout.html
+├── order-confirmation.html
+├── order-tracking.html
+│
+├── style.css
+├── script.js
+│
+├── images/
+│   ├── logo.png
+│   ├── hero4.png
+│   ├── button.png
+│   ├── features/
+│   │   ├── f1.png
+│   │   ├── f2.png
+│   │   ├── f3.png
+│   │   ├── f4.png
+│   │   ├── f5.png
+│   │   └── f6.png
+│   ├── products/
+│   │   ├── men/
+│   │   │   ├── m1.jpg
+│   │   │   ├── m2.jpg
+│   │   │   ├── m3.jpg
+│   │   │   ├── m4.jpg
+│   │   │   ├── m5.jpg
+│   │   │   ├── m6.jpg
+│   │   │   ├── m7.jpg
+│   │   │   └── m8.jpg
+│   │   ├── women/
+│   │   │   ├── w1.jpg
+│   │   │   ├── w2.jpg
+│   │   │   ├── w3.jpg
+│   │   │   ├── w4.jpg
+│   │   │   ├── w5.jpg
+│   │   │   ├── w6.jpg
+│   │   │   ├── w7.jpg
+│   │   │   └── w8.jpg
+│   │   ├── accessories/
+│   │   │   ├── a1.jpg
+│   │   │   ├── a2.jpg
+│   │   │   ├── a3.jpg
+│   │   │   ├── a4.jpg
+│   │   │   ├── a5.jpg
+│   │   │   ├── a6.jpg
+│   │   │   ├── a7.jpg
+│   │   │   └── a8.jpg
+│   │   └── footwear/
+│   │       ├── f1.jpg
+│   │       ├── f2.jpg
+│   │       ├── f3.jpg
+│   │       ├── f4.jpg
+│   │       ├── f5.jpg
+│   │       ├── f6.jpg
+│   │       ├── f7.jpg
+│   │       └── f8.jpg
+│   ├── banner/
+│   │   ├── b2.jpg
+│   │   ├── b4.jpg
+│   │   ├── b7.jpg
+│   │   ├── b10.jpg
+│   │   ├── b14.png
+│   │   ├── b17.jpg
+│   │   └── b18.jpg
+│   ├── blog/
+│   │   ├── b1.jpg
+│   │   ├── b2.jpg
+│   │   ├── b3.jpg
+│   │   ├── b4.jpg
+│   │   ├── b5.jpg
+│   │   └── b6.jpg
+│   ├── team/
+│   │   ├── team1.jpg
+│   │   ├── team2.jpg
+│   │   ├── team3.jpg
+│   │   └── team4.jpg
+│   └── pay/
+│       ├── app.jpg
+│       ├── play.jpg
+│       └── pay.png
+│
+└── README.md

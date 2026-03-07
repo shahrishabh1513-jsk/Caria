@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - FashionHub</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/0e53af926d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="header">
+            <div class="header-logo">
+                <a href="index.html"><img src="images/logo.png" alt="FashionHub Logo" /></a>
+            </div>
+            <div class="header-list">
+                <nav class="header-list-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-list-icon">
+                    <a href="cart.html"><i class="fa fa-bag-shopping"></i><span class="cart-count">0</span></a>
+                    <a class="active" href="login.html"><i class="fa fa-user"></i></a>
+                </div>
+            </div>
+            <div class="mobile-menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="page-header" class="login-header">
+            <h2>#welcome_back</h2>
+            <p>Sign in to your account</p>
+        </section>
+
+        <section id="login-form" class="section-p1">
+            <div class="form-container">
+                <h2>Login to FashionHub</h2>
+                <form id="login-form-element">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-options">
+                        <label>
+                            <input type="checkbox" id="remember-me"> Remember me
+                        </label>
+                        <a href="#" id="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="normal">Login</button>
+                </form>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="register.html">Register here</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="footer">
+            <div class="contact">
+                <a href="index.html"><img src="images/logo.png" alt="FashionHub Logo" /></a>
+                <br><br>
+                <h3>Contact</h3>
+                <address>
+                    <p><b>Address:</b> 123 Fashion Street, New York, NY 10001</p>
+                    <p><b>Phone:</b> +1 (555) 123-4567</p>
+                    <p><b>Hours:</b> 10:00 - 18:00, Mon - Sat</p>
+                </address>
+                <h3>Follow Us</h3>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="about">
+                <h3>About</h3>
+                <a href="about.html">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="myaccount">
+                <h3>My account</h3>
+                <a href="login.html">Sign In</a>
+                <a href="cart.html">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="order-tracking.html">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+            <div class="install">
+                <h3>Install App</h3>
+                <p>From App Store or Google Play</p>
+                <div class="download">
+                    <a href="#"><img src="images/pay/app.jpg" alt="App Store"></a>
+                    <a href="#"><img src="images/pay/play.jpg" alt="Google Play"></a>
+                </div>
+                <p>Secured Payment Gateways</p>
+                <img src="images/pay/pay.png" alt="Payment Methods">
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 FashionHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

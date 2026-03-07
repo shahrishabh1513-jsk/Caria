@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation - FashionHub</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/0e53af926d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="header">
+            <div class="header-logo">
+                <a href="index.html"><img src="images/logo.png" alt="FashionHub Logo" /></a>
+            </div>
+            <div class="header-list">
+                <nav class="header-list-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-list-icon">
+                    <a href="cart.html"><i class="fa fa-bag-shopping"></i><span class="cart-count">0</span></a>
+                    <a href="login.html"><i class="fa fa-user"></i></a>
+                </div>
+            </div>
+            <div class="mobile-menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="page-header" class="confirmation-header">
+            <h2>#thank_you</h2>
+            <p>Your order has been confirmed</p>
+        </section>
+
+        <section id="order-confirmation" class="section-p1">
+            <div class="confirmation-container">
+                <div class="success-icon">
+                    <i class="fa fa-check-circle"></i>
+                </div>
+                <h1>Thank You for Your Order!</h1>
+                <p>Your order has been placed successfully.</p>
+                
+                <div class="order-details" id="order-details">
+                    <h3>Order Details</h3>
+                    <p><strong>Order Number:</strong> <span id="order-number">FH-2024-001</span></p>
+                    <p><strong>Order Date:</strong> <span id="order-date">June 15, 2024</span></p>
+                    <p><strong>Total Amount:</strong> <span id="order-amount">$0.00</span></p>
+                    <p><strong>Payment Method:</strong> <span id="payment-method">Credit Card</span></p>
+                    <p><strong>Shipping Address:</strong> <span id="shipping-address">123 Main St, New York, NY 10001</span></p>
+                </div>
+                
+                <div class="order-items" id="order-items-list" style="margin: 20px 0; text-align: left;">
+                    <h3>Order Items</h3>
+                    <table class="order-items-table" style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background-color: #088178; color: white;">
+                                <th style="padding: 10px;">Product</th>
+                                <th style="padding: 10px;">Quantity</th>
+                                <th style="padding: 10px;">Price</th>
+                                <th style="padding: 10px;">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="order-items-body">
+                            <!-- Items will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="confirmation-actions">
+                    <button class="normal" onclick="printBill()"><i class="fa fa-print"></i> Print Bill</button>
+                    <button class="normal" onclick="window.location.href='order-tracking.html'">Track Your Order</button>
+                    <button class="normal" onclick="window.location.href='shop.html'" style="background-color: #f0f0f0; color: #333;">Continue Shopping</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Hidden printable bill template -->
+    <div id="printable-bill" style="display: none;">
+        <div style="padding: 30px; font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="images/logo.png" alt="FashionHub Logo" style="max-height: 60px;">
+                <h1 style="color: #088178; margin: 10px 0;">FashionHub</h1>
+                <p>123 Fashion Street, New York, NY 10001</p>
+                <p>Phone: +1 (555) 123-4567 | Email: support@fashionhub.com</p>
+                <hr style="border: 1px solid #088178; margin: 20px 0;">
+            </div>
+            
+            <h2 style="text-align: center; color: #088178;">INVOICE</h2>
+            
+            <div style="display: flex; justify-content: space-between; margin: 20px 0;">
+                <div>
+                    <h3>Bill To:</h3>
+                    <p id="bill-customer-name"></p>
+                    <p id="bill-customer-email"></p>
+                    <p id="bill-customer-phone"></p>
+                    <p id="bill-customer-address"></p>
+                </div>
+                <div style="text-align: right;">
+                    <p><strong>Invoice Number:</strong> <span id="bill-invoice-number"></span></p>
+                    <p><strong>Order Date:</strong> <span id="bill-order-date"></span></p>
+                    <p><strong>Payment Method:</strong> <span id="bill-payment-method"></span></p>
+                </div>
+            </div>
+            
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <thead>
+                    <tr style="background-color: #088178; color: white;">
+                        <th style="padding: 12px; text-align: left;">Product</th>
+                        <th style="padding: 12px; text-align: center;">Quantity</th>
+                        <th style="padding: 12px; text-align: right;">Unit Price</th>
+                        <th style="padding: 12px; text-align: right;">Total</th>
+                    </tr>
+                </thead>
+                <tbody id="bill-items-body">
+                    <!-- Items will be loaded here -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" style="padding: 10px; text-align: right;"><strong>Subtotal:</strong></td>
+                        <td style="padding: 10px; text-align: right;" id="bill-subtotal"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="padding: 10px; text-align: right;"><strong>Shipping:</strong></td>
+                        <td style="padding: 10px; text-align: right;" id="bill-shipping"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="padding: 10px; text-align: right;"><strong>Tax (10%):</strong></td>
+                        <td style="padding: 10px; text-align: right;" id="bill-tax"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="padding: 10px; text-align: right; font-size: 18px;"><strong>Grand Total:</strong></td>
+                        <td style="padding: 10px; text-align: right; font-size: 18px; font-weight: bold; color: #088178;" id="bill-total"></td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <div style="margin-top: 40px; text-align: center;">
+                <p><strong>Thank you for shopping with FashionHub!</strong></p>
+                <p>For any queries, please contact our customer support.</p>
+                <hr style="border: 1px dashed #ccc; margin: 20px 0;">
+                <p style="font-size: 12px; color: #777;">This is a computer-generated invoice. No signature is required.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div id="footer">
+            <div class="contact">
+                <a href="index.html"><img src="images/logo.png" alt="FashionHub Logo" /></a>
+                <br><br>
+                <h3>Contact</h3>
+                <address>
+                    <p><b>Address:</b> 123 Fashion Street, New York, NY 10001</p>
+                    <p><b>Phone:</b> +1 (555) 123-4567</p>
+                    <p><b>Hours:</b> 10:00 - 18:00, Mon - Sat</p>
+                </address>
+                <h3>Follow Us</h3>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="about">
+                <h3>About</h3>
+                <a href="about.html">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="myaccount">
+                <h3>My account</h3>
+                <a href="login.html">Sign In</a>
+                <a href="cart.html">View Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="order-tracking.html">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+            <div class="install">
+                <h3>Install App</h3>
+                <p>From App Store or Google Play</p>
+                <div class="download">
+                    <a href="#"><img src="images/pay/app.jpg" alt="App Store"></a>
+                    <a href="#"><img src="images/pay/play.jpg" alt="Google Play"></a>
+                </div>
+                <p>Secured Payment Gateways</p>
+                <img src="images/pay/pay.png" alt="Payment Methods">
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 FashionHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
