@@ -5,6 +5,19 @@ let users = [];
 let currentUser = null;
 let orders = [];
 
+// Product reviews data
+const productReviews = {
+    'm1': [
+        { name: 'John D.', rating: 5, date: '2024-05-15', comment: 'Perfect fit and great quality! Highly recommended.' },
+        { name: 'Sarah M.', rating: 4, date: '2024-05-10', comment: 'Nice shirt, comfortable fabric. Slightly large fit.' },
+        { name: 'Mike R.', rating: 5, date: '2024-05-05', comment: 'Excellent value for money. Will buy again.' }
+    ],
+    'm2': [
+        { name: 'David L.', rating: 5, date: '2024-05-12', comment: 'Best jeans I\'ve ever bought. Very comfortable.' },
+        { name: 'Emma W.', rating: 4, date: '2024-05-08', comment: 'Good quality, true to size.' }
+    ]
+};
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     loadProducts();
@@ -22,60 +35,68 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Load page-specific content
     loadPageContent();
+    
+    // Setup close modal button
+    const closeBtn = document.querySelector('.close-modal');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            document.getElementById('product-modal').style.display = 'none';
+        });
+    }
 });
 
 // Load products data
 function loadProducts() {
     products = [
         // Men's Products (8 items)
-        { id: 'm1', name: 'Classic Fit Shirt', category: 'men', price: 45, brand: 'Allen solly', image: 'images/products/men/m1.jpg', rating: 4.5, description: 'Classic fit cotton shirt for men' },
-        { id: 'm2', name: 'Slim Jeans', category: 'men', price: 65, brand: 'Levis', image: 'images/products/men/m2.jpg', rating: 4, description: 'Slim fit denim jeans' },
-        { id: 'm3', name: 'Leather Jacket', category: 'men', price: 120, brand: 'Zara', image: 'images/products/men/m3.jpg', rating: 5, description: 'Premium leather jacket' },
-        { id: 'm4', name: 'Casual Hoodie', category: 'men', price: 55, brand: 'Adidas', image: 'images/products/men/m4.jpg', rating: 4, description: 'Comfortable cotton hoodie' },
-        { id: 'm5', name: 'Formal Blazer', category: 'men', price: 150, brand: 'H&M', image: 'images/products/men/m5.jpg', rating: 4.5, description: 'Elegant formal blazer' },
-        { id: 'm6', name: 'Sports T-Shirt', category: 'men', price: 35, brand: 'Puma', image: 'images/products/men/m6.jpg', rating: 4, description: 'Breathable sports t-shirt' },
-        { id: 'm7', name: 'Chino Pants', category: 'men', price: 60, brand: 'Gap', image: 'images/products/men/m7.jpg', rating: 4.5, description: 'Comfortable chino pants' },
-        { id: 'm8', name: 'Wool Sweater', category: 'men', price: 85, brand: 'Uniqlo', image: 'images/products/men/m8.jpg', rating: 4, description: 'Warm wool sweater' },
+        { id: 'm1', name: 'Classic Fit Shirt', category: 'men', price: 45, brand: 'Allen solly', image: 'images/products/men/m1.jpg', images: ['images/products/men/m1.jpg', 'images/products/men/m1.jpg', 'images/products/men/m1.jpg'], rating: 4.5, description: 'Classic fit cotton shirt for men. Made with 100% premium cotton. Perfect for casual and formal occasions.', type: 'shirt', colors: ['White', 'Blue', 'Black'] },
+        { id: 'm2', name: 'Slim Jeans', category: 'men', price: 65, brand: 'Levis', image: 'images/products/men/m2.jpg', images: ['images/products/men/m2.jpg', 'images/products/men/m2.jpg', 'images/products/men/m2.jpg'], rating: 4, description: 'Slim fit denim jeans. Classic blue color with stretchable fabric for maximum comfort.', type: 'pant', colors: ['Blue', 'Black', 'Gray'] },
+        { id: 'm3', name: 'Leather Jacket', category: 'men', price: 120, brand: 'Zara', image: 'images/products/men/m3.jpg', images: ['images/products/men/m3.jpg', 'images/products/men/m3.jpg', 'images/products/men/m3.jpg'], rating: 5, description: 'Premium leather jacket. Genuine leather with soft inner lining. Perfect for winter.', type: 'jacket', colors: ['Black', 'Brown'] },
+        { id: 'm4', name: 'Casual Hoodie', category: 'men', price: 55, brand: 'Adidas', image: 'images/products/men/m4.jpg', images: ['images/products/men/m4.jpg', 'images/products/men/m4.jpg', 'images/products/men/m4.jpg'], rating: 4, description: 'Comfortable cotton hoodie. Perfect for workouts and casual wear.', type: 'hoodie', colors: ['Gray', 'Black', 'Navy'] },
+        { id: 'm5', name: 'Formal Blazer', category: 'men', price: 150, brand: 'H&M', image: 'images/products/men/m5.jpg', images: ['images/products/men/m5.jpg', 'images/products/men/m5.jpg', 'images/products/men/m5.jpg'], rating: 4.5, description: 'Elegant formal blazer for business meetings and special occasions.', type: 'blazer', colors: ['Navy', 'Black', 'Charcoal'] },
+        { id: 'm6', name: 'Sports T-Shirt', category: 'men', price: 35, brand: 'Puma', image: 'images/products/men/m6.jpg', images: ['images/products/men/m6.jpg', 'images/products/men/m6.jpg', 'images/products/men/m6.jpg'], rating: 4, description: 'Breathable sports t-shirt. Moisture-wicking fabric for workouts.', type: 'shirt', colors: ['Red', 'Blue', 'Black'] },
+        { id: 'm7', name: 'Chino Pants', category: 'men', price: 60, brand: 'Gap', image: 'images/products/men/m7.jpg', images: ['images/products/men/m7.jpg', 'images/products/men/m7.jpg', 'images/products/men/m7.jpg'], rating: 4.5, description: 'Comfortable chino pants for casual and semi-formal wear.', type: 'pant', colors: ['Khaki', 'Navy', 'Olive'] },
+        { id: 'm8', name: 'Wool Sweater', category: 'men', price: 85, brand: 'Uniqlo', image: 'images/products/men/m8.jpg', images: ['images/products/men/m8.jpg', 'images/products/men/m8.jpg', 'images/products/men/m8.jpg'], rating: 4, description: 'Warm wool sweater for winter. Soft and comfortable.', type: 'sweater', colors: ['Gray', 'Navy', 'Burgundy'] },
         
         // Women's Products (8 items)
-        { id: 'w1', name: 'Floral Dress', category: 'women', price: 75, brand: 'Zara', image: 'images/products/women/w1.jpg', rating: 4.5, description: 'Beautiful floral print dress' },
-        { id: 'w2', name: 'Denim Skirt', category: 'women', price: 50, brand: 'Levis', image: 'images/products/women/w2.jpg', rating: 4, description: 'Stylish denim skirt' },
-        { id: 'w3', name: 'Summer Top', category: 'women', price: 30, brand: 'H&M', image: 'images/products/women/w3.jpg', rating: 4, description: 'Light summer top' },
-        { id: 'w4', name: 'Blazer Set', category: 'women', price: 140, brand: 'Mango', image: 'images/products/women/w4.jpg', rating: 5, description: 'Elegant blazer and pants set' },
-        { id: 'w5', name: 'Cardigan', category: 'women', price: 55, brand: 'Gap', image: 'images/products/women/w5.jpg', rating: 4, description: 'Soft knit cardigan' },
-        { id: 'w6', name: 'Leggings', category: 'women', price: 40, brand: 'Nike', image: 'images/products/women/w6.jpg', rating: 4.5, description: 'High-quality workout leggings' },
-        { id: 'w7', name: 'Evening Gown', category: 'women', price: 200, brand: 'Gucci', image: 'images/products/women/w7.jpg', rating: 5, description: 'Luxurious evening gown' },
-        { id: 'w8', name: 'Jean Jacket', category: 'women', price: 90, brand: 'Levis', image: 'images/products/women/w8.jpg', rating: 4, description: 'Classic denim jacket' },
+        { id: 'w1', name: 'Floral Dress', category: 'women', price: 75, brand: 'Zara', image: 'images/products/women/w1.jpg', images: ['images/products/women/w1.jpg', 'images/products/women/w1.jpg', 'images/products/women/w1.jpg'], rating: 4.5, description: 'Beautiful floral print dress for summer.', type: 'dress', colors: ['Pink', 'Blue', 'Yellow'] },
+        { id: 'w2', name: 'Denim Skirt', category: 'women', price: 50, brand: 'Levis', image: 'images/products/women/w2.jpg', images: ['images/products/women/w2.jpg', 'images/products/women/w2.jpg', 'images/products/women/w2.jpg'], rating: 4, description: 'Stylish denim skirt. Perfect for casual outings.', type: 'skirt', colors: ['Blue', 'Black'] },
+        { id: 'w3', name: 'Summer Top', category: 'women', price: 30, brand: 'H&M', image: 'images/products/women/w3.jpg', images: ['images/products/women/w3.jpg', 'images/products/women/w3.jpg', 'images/products/women/w3.jpg'], rating: 4, description: 'Light summer top with breathable fabric.', type: 'top', colors: ['White', 'Pink', 'Blue'] },
+        { id: 'w4', name: 'Blazer Set', category: 'women', price: 140, brand: 'Mango', image: 'images/products/women/w4.jpg', images: ['images/products/women/w4.jpg', 'images/products/women/w4.jpg', 'images/products/women/w4.jpg'], rating: 5, description: 'Elegant blazer and pants set for office wear.', type: 'blazer', colors: ['Black', 'Navy'] },
+        { id: 'w5', name: 'Cardigan', category: 'women', price: 55, brand: 'Gap', image: 'images/products/women/w5.jpg', images: ['images/products/women/w5.jpg', 'images/products/women/w5.jpg', 'images/products/women/w5.jpg'], rating: 4, description: 'Soft knit cardigan for layering.', type: 'cardigan', colors: ['Beige', 'Gray', 'Black'] },
+        { id: 'w6', name: 'Leggings', category: 'women', price: 40, brand: 'Nike', image: 'images/products/women/w6.jpg', images: ['images/products/women/w6.jpg', 'images/products/women/w6.jpg', 'images/products/women/w6.jpg'], rating: 4.5, description: 'High-quality workout leggings with compression fit.', type: 'leggings', colors: ['Black', 'Navy', 'Gray'] },
+        { id: 'w7', name: 'Evening Gown', category: 'women', price: 200, brand: 'Gucci', image: 'images/products/women/w7.jpg', images: ['images/products/women/w7.jpg', 'images/products/women/w7.jpg', 'images/products/women/w7.jpg'], rating: 5, description: 'Luxurious evening gown for special occasions.', type: 'dress', colors: ['Red', 'Black', 'Blue'] },
+        { id: 'w8', name: 'Jean Jacket', category: 'women', price: 90, brand: 'Levis', image: 'images/products/women/w8.jpg', images: ['images/products/women/w8.jpg', 'images/products/women/w8.jpg', 'images/products/women/w8.jpg'], rating: 4, description: 'Classic denim jacket that never goes out of style.', type: 'jacket', colors: ['Blue', 'Black'] },
         
         // Accessories (8 items)
-        { id: 'a1', name: 'Leather Belt', category: 'accessories', price: 30, brand: 'H&M', image: 'images/products/accessories/a1.jpg', rating: 4, description: 'Genuine leather belt' },
-        { id: 'a2', name: 'Sunglasses', category: 'accessories', price: 45, brand: 'Ray-Ban', image: 'images/products/accessories/a2.jpg', rating: 4.5, description: 'UV protection sunglasses' },
-        { id: 'a3', name: 'Watch', category: 'accessories', price: 120, brand: 'Casio', image: 'images/products/accessories/a3.jpg', rating: 5, description: 'Classic analog watch' },
-        { id: 'a4', name: 'Scarf', category: 'accessories', price: 25, brand: 'Zara', image: 'images/products/accessories/a4.jpg', rating: 4, description: 'Soft winter scarf' },
-        { id: 'a5', name: 'Backpack', category: 'accessories', price: 70, brand: 'Nike', image: 'images/products/accessories/a5.jpg', rating: 4.5, description: 'Durable sport backpack' },
-        { id: 'a6', name: 'Cap', category: 'accessories', price: 20, brand: 'Adidas', image: 'images/products/accessories/a6.jpg', rating: 4, description: 'Adjustable baseball cap' },
-        { id: 'a7', name: 'Wallet', category: 'accessories', price: 35, brand: 'Gucci', image: 'images/products/accessories/a7.jpg', rating: 4.5, description: 'Luxury leather wallet' },
-        { id: 'a8', name: 'Necklace', category: 'accessories', price: 60, brand: 'Swarovski', image: 'images/products/accessories/a8.jpg', rating: 5, description: 'Elegant silver necklace' },
+        { id: 'a1', name: 'Leather Belt', category: 'accessories', price: 30, brand: 'H&M', image: 'images/products/accessories/a1.jpg', images: ['images/products/accessories/a1.jpg'], rating: 4, description: 'Genuine leather belt with classic buckle.', type: 'belt', colors: ['Brown', 'Black'] },
+        { id: 'a2', name: 'Sunglasses', category: 'accessories', price: 45, brand: 'Ray-Ban', image: 'images/products/accessories/a2.jpg', images: ['images/products/accessories/a2.jpg'], rating: 4.5, description: 'UV protection sunglasses with stylish design.', type: 'sunglasses', colors: ['Black', 'Brown'] },
+        { id: 'a3', name: 'Watch', category: 'accessories', price: 120, brand: 'Casio', image: 'images/products/accessories/a3.jpg', images: ['images/products/accessories/a3.jpg'], rating: 5, description: 'Classic analog watch with leather strap.', type: 'watch', colors: ['Silver', 'Gold'] },
+        { id: 'a4', name: 'Scarf', category: 'accessories', price: 25, brand: 'Zara', image: 'images/products/accessories/a4.jpg', images: ['images/products/accessories/a4.jpg'], rating: 4, description: 'Soft winter scarf in various colors.', type: 'scarf', colors: ['Red', 'Gray', 'Blue'] },
+        { id: 'a5', name: 'Backpack', category: 'accessories', price: 70, brand: 'Nike', image: 'images/products/accessories/a5.jpg', images: ['images/products/accessories/a5.jpg'], rating: 4.5, description: 'Durable sport backpack with multiple compartments.', type: 'bag', colors: ['Black', 'Gray'] },
+        { id: 'a6', name: 'Cap', category: 'accessories', price: 20, brand: 'Adidas', image: 'images/products/accessories/a6.jpg', images: ['images/products/accessories/a6.jpg'], rating: 4, description: 'Adjustable baseball cap with logo.', type: 'cap', colors: ['Black', 'White', 'Navy'] },
+        { id: 'a7', name: 'Wallet', category: 'accessories', price: 35, brand: 'Gucci', image: 'images/products/accessories/a7.jpg', images: ['images/products/accessories/a7.jpg'], rating: 4.5, description: 'Luxury leather wallet with multiple card slots.', type: 'wallet', colors: ['Brown', 'Black'] },
+        { id: 'a8', name: 'Necklace', category: 'accessories', price: 60, brand: 'Swarovski', image: 'images/products/accessories/a8.jpg', images: ['images/products/accessories/a8.jpg'], rating: 5, description: 'Elegant silver necklace with crystal pendant.', type: 'jewelry', colors: ['Silver', 'Gold'] },
         
         // Footwear (8 items)
-        { id: 'f1', name: 'Running Shoes', category: 'footwear', price: 95, brand: 'Nike', image: 'images/products/footwear/f1.jpg', rating: 4.5, description: 'Comfortable running shoes' },
-        { id: 'f2', name: 'Leather Boots', category: 'footwear', price: 140, brand: 'Timberland', image: 'images/products/footwear/f2.jpg', rating: 5, description: 'Durable leather boots' },
-        { id: 'f3', name: 'Sandals', category: 'footwear', price: 40, brand: 'Adidas', image: 'images/products/footwear/f3.jpg', rating: 4, description: 'Comfortable summer sandals' },
-        { id: 'f4', name: 'Formal Shoes', category: 'footwear', price: 110, brand: 'Clarks', image: 'images/products/footwear/f4.jpg', rating: 4.5, description: 'Elegant formal shoes' },
-        { id: 'f5', name: 'Sneakers', category: 'footwear', price: 80, brand: 'Puma', image: 'images/products/footwear/f5.jpg', rating: 4, description: 'Casual sneakers' },
-        { id: 'f6', name: 'High Heels', category: 'footwear', price: 120, brand: 'Jimmy Choo', image: 'images/products/footwear/f6.jpg', rating: 5, description: 'Stylish high heels' },
-        { id: 'f7', name: 'Loafers', category: 'footwear', price: 85, brand: 'H&M', image: 'images/products/footwear/f7.jpg', rating: 4, description: 'Comfortable loafers' },
-        { id: 'f8', name: 'Flip Flops', category: 'footwear', price: 15, brand: 'Havaianas', image: 'images/products/footwear/f8.jpg', rating: 4, description: 'Beach flip flops' },
+        { id: 'f1', name: 'Running Shoes', category: 'footwear', price: 95, brand: 'Nike', image: 'images/products/footwear/f1.jpg', images: ['images/products/footwear/f1.jpg', 'images/products/footwear/f1.jpg', 'images/products/footwear/f1.jpg'], rating: 4.5, description: 'Comfortable running shoes with cushioning.', type: 'shoes', colors: ['Black/Red', 'Blue/White', 'Gray'] },
+        { id: 'f2', name: 'Leather Boots', category: 'footwear', price: 140, brand: 'Timberland', image: 'images/products/footwear/f2.jpg', images: ['images/products/footwear/f2.jpg', 'images/products/footwear/f2.jpg', 'images/products/footwear/f2.jpg'], rating: 5, description: 'Durable leather boots for outdoor adventures.', type: 'boots', colors: ['Brown', 'Black'] },
+        { id: 'f3', name: 'Sandals', category: 'footwear', price: 40, brand: 'Adidas', image: 'images/products/footwear/f3.jpg', images: ['images/products/footwear/f3.jpg', 'images/products/footwear/f3.jpg', 'images/products/footwear/f3.jpg'], rating: 4, description: 'Comfortable summer sandals with cushioned footbed.', type: 'sandals', colors: ['Black', 'Brown', 'Navy'] },
+        { id: 'f4', name: 'Formal Shoes', category: 'footwear', price: 110, brand: 'Clarks', image: 'images/products/footwear/f4.jpg', images: ['images/products/footwear/f4.jpg', 'images/products/footwear/f4.jpg', 'images/products/footwear/f4.jpg'], rating: 4.5, description: 'Elegant formal shoes for office wear.', type: 'shoes', colors: ['Black', 'Brown'] },
+        { id: 'f5', name: 'Sneakers', category: 'footwear', price: 80, brand: 'Puma', image: 'images/products/footwear/f5.jpg', images: ['images/products/footwear/f5.jpg', 'images/products/footwear/f5.jpg', 'images/products/footwear/f5.jpg'], rating: 4, description: 'Casual sneakers for everyday wear.', type: 'shoes', colors: ['White', 'Black', 'Red'] },
+        { id: 'f6', name: 'High Heels', category: 'footwear', price: 120, brand: 'Jimmy Choo', image: 'images/products/footwear/f6.jpg', images: ['images/products/footwear/f6.jpg', 'images/products/footwear/f6.jpg', 'images/products/footwear/f6.jpg'], rating: 5, description: 'Stylish high heels for parties and events.', type: 'heels', colors: ['Black', 'Red', 'Nude'] },
+        { id: 'f7', name: 'Loafers', category: 'footwear', price: 85, brand: 'H&M', image: 'images/products/footwear/f7.jpg', images: ['images/products/footwear/f7.jpg', 'images/products/footwear/f7.jpg', 'images/products/footwear/f7.jpg'], rating: 4, description: 'Comfortable loafers for casual and semi-formal wear.', type: 'shoes', colors: ['Brown', 'Black', 'Tan'] },
+        { id: 'f8', name: 'Flip Flops', category: 'footwear', price: 15, brand: 'Havaianas', image: 'images/products/footwear/f8.jpg', images: ['images/products/footwear/f8.jpg', 'images/products/footwear/f8.jpg', 'images/products/footwear/f8.jpg'], rating: 4, description: 'Beach flip flops with comfortable sole.', type: 'sandals', colors: ['Blue', 'Green', 'Red'] },
         
-        // Additional Products (10 more to reach 50+)
-        { id: 'f9', name: 'Winter Boots', category: 'footwear', price: 160, brand: 'UGG', image: 'images/products/footwear/f9.jpg', rating: 4.5, description: 'Warm winter boots' },
-        { id: 'f10', name: 'Canvas Shoes', category: 'footwear', price: 50, brand: 'Converse', image: 'images/products/footwear/f10.jpg', rating: 4, description: 'Classic canvas shoes' },
-        { id: 'a9', name: 'Hat', category: 'accessories', price: 25, brand: 'Zara', image: 'images/products/accessories/a9.jpg', rating: 4, description: 'Summer sun hat' },
-        { id: 'a10', name: 'Bracelet', category: 'accessories', price: 35, brand: 'Pandora', image: 'images/products/accessories/a10.jpg', rating: 4.5, description: 'Silver charm bracelet' },
-        { id: 'm9', name: 'Polo Shirt', category: 'men', price: 40, brand: 'Ralph Lauren', image: 'images/products/men/m9.jpg', rating: 4.5, description: 'Classic polo shirt' },
-        { id: 'm10', name: 'Cargo Pants', category: 'men', price: 70, brand: 'Zara', image: 'images/products/men/m10.jpg', rating: 4, description: 'Cargo pants with pockets' },
-        { id: 'w9', name: 'Maxi Dress', category: 'women', price: 95, brand: 'H&M', image: 'images/products/women/w9.jpg', rating: 4.5, description: 'Long maxi dress' },
-        { id: 'w10', name: 'Crop Top', category: 'women', price: 25, brand: 'Zara', image: 'images/products/women/w10.jpg', rating: 4, description: 'Trendy crop top' }
+        // Additional Products
+        { id: 'f9', name: 'Winter Boots', category: 'footwear', price: 160, brand: 'UGG', image: 'images/products/footwear/f9.jpg', images: ['images/products/footwear/f9.jpg'], rating: 4.5, description: 'Warm winter boots', type: 'boots', colors: ['Brown', 'Black'] },
+        { id: 'f10', name: 'Canvas Shoes', category: 'footwear', price: 50, brand: 'Converse', image: 'images/products/footwear/f10.jpg', images: ['images/products/footwear/f10.jpg'], rating: 4, description: 'Classic canvas shoes', type: 'shoes', colors: ['White', 'Black'] },
+        { id: 'a9', name: 'Hat', category: 'accessories', price: 25, brand: 'Zara', image: 'images/products/accessories/a9.jpg', images: ['images/products/accessories/a9.jpg'], rating: 4, description: 'Summer sun hat', type: 'cap', colors: ['Beige', 'Black'] },
+        { id: 'a10', name: 'Bracelet', category: 'accessories', price: 35, brand: 'Pandora', image: 'images/products/accessories/a10.jpg', images: ['images/products/accessories/a10.jpg'], rating: 4.5, description: 'Silver charm bracelet', type: 'jewelry', colors: ['Silver', 'Gold'] },
+        { id: 'm9', name: 'Polo Shirt', category: 'men', price: 40, brand: 'Ralph Lauren', image: 'images/products/men/m9.jpg', images: ['images/products/men/m9.jpg'], rating: 4.5, description: 'Classic polo shirt', type: 'shirt', colors: ['White', 'Navy', 'Red'] },
+        { id: 'm10', name: 'Cargo Pants', category: 'men', price: 70, brand: 'Zara', image: 'images/products/men/m10.jpg', images: ['images/products/men/m10.jpg'], rating: 4, description: 'Cargo pants with pockets', type: 'pant', colors: ['Khaki', 'Olive', 'Black'] },
+        { id: 'w9', name: 'Maxi Dress', category: 'women', price: 95, brand: 'H&M', image: 'images/products/women/w9.jpg', images: ['images/products/women/w9.jpg'], rating: 4.5, description: 'Long maxi dress', type: 'dress', colors: ['Blue', 'Pink', 'Green'] },
+        { id: 'w10', name: 'Crop Top', category: 'women', price: 25, brand: 'Zara', image: 'images/products/women/w10.jpg', images: ['images/products/women/w10.jpg'], rating: 4, description: 'Trendy crop top', type: 'top', colors: ['White', 'Black', 'Red'] }
     ];
     
     // Additional 10 filler products (using existing images creatively)
@@ -88,7 +109,9 @@ function loadProducts() {
             brand: 'FashionHub',
             image: i % 2 === 0 ? 'images/products/f1.jpg' : 'images/products/f2.jpg',
             rating: 4,
-            description: 'Quality fashion product'
+            description: 'Quality fashion product',
+            type: 'shirt',
+            colors: ['Black', 'White']
         });
     }
 }
@@ -532,29 +555,6 @@ function togglePaymentDetails() {
     }
 }
 
-// Add to cart
-function addToCart(productId) {
-    const product = products.find(p => p.id === productId);
-    if (!product) return;
-    
-    const existingItem = cart.find(item => item.id === productId);
-    
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            image: product.image,
-            quantity: 1
-        });
-    }
-    
-    saveCart();
-    alert(`${product.name} added to cart!`);
-}
-
 // Update cart item quantity
 function updateCartItemQuantity(productId, newQuantity) {
     const item = cart.find(item => item.id === productId);
@@ -574,55 +574,6 @@ function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId);
     saveCart();
     displayCart();
-}
-
-// Display cart items
-function displayCart() {
-    const cartItems = document.getElementById('cart-items');
-    const emptyCartMessage = document.getElementById('empty-cart-message');
-    const cartSummary = document.getElementById('cart-summary');
-    
-    if (!cartItems) return;
-    
-    if (cart.length === 0) {
-        cartItems.innerHTML = '';
-        if (emptyCartMessage) emptyCartMessage.style.display = 'block';
-        if (cartSummary) cartSummary.style.display = 'none';
-        return;
-    }
-    
-    if (emptyCartMessage) emptyCartMessage.style.display = 'none';
-    if (cartSummary) cartSummary.style.display = 'block';
-    
-    let html = '';
-    let subtotal = 0;
-    
-    cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        subtotal += itemTotal;
-        
-        html += `
-            <tr>
-                <td><img src="${item.image}" alt="${item.name}" width="50"></td>
-                <td>${item.name}</td>
-                <td>$${item.price.toFixed(2)}</td>
-                <td>
-                    <div class="quantity-control">
-                        <button class="quantity-btn" onclick="updateCartItemQuantity('${item.id}', ${item.quantity - 1})">-</button>
-                        <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="updateCartItemQuantity('${item.id}', this.value)" readonly>
-                        <button class="quantity-btn" onclick="updateCartItemQuantity('${item.id}', ${item.quantity + 1})">+</button>
-                    </div>
-                </td>
-                <td>$${itemTotal.toFixed(2)}</td>
-                <td><i class="fa fa-trash remove-item" onclick="removeFromCart('${item.id}')"></i></td>
-            </tr>
-        `;
-    });
-    
-    cartItems.innerHTML = html;
-    
-    // Update summary
-    updateCartSummary(subtotal);
 }
 
 // Update cart summary
@@ -647,25 +598,28 @@ function updateCartSummary(subtotal) {
 // Load page-specific content
 function loadPageContent() {
     const path = window.location.pathname;
+    const fileName = path.split('/').pop() || 'index.html';
     
-    if (path.includes('index.html') || path === '/' || path.endsWith('/')) {
+    if (fileName === 'index.html' || fileName === '' || fileName === '/') {
         loadHomePage();
-    } else if (path.includes('shop.html')) {
+    } else if (fileName === 'shop.html') {
         loadShopPage();
-    } else if (path.includes('blog.html')) {
+    } else if (fileName === 'blog.html') {
         loadBlogPage();
-    } else if (path.includes('about.html')) {
+    } else if (fileName === 'about.html') {
         loadAboutPage();
-    } else if (path.includes('contact.html')) {
+    } else if (fileName === 'contact.html') {
         loadContactPage();
-    } else if (path.includes('cart.html')) {
+    } else if (fileName === 'cart.html') {
         displayCart();
-    } else if (path.includes('checkout.html')) {
+    } else if (fileName === 'checkout.html') {
         loadCheckoutPage();
-    } else if (path.includes('order-confirmation.html')) {
+    } else if (fileName === 'order-confirmation.html') {
         loadOrderConfirmation();
-    } else if (path.includes('order-tracking.html')) {
+    } else if (fileName === 'order-tracking.html') {
         loadOrderTrackingPage();
+    } else if (fileName === 'my-orders.html') {
+        loadMyOrders();
     }
 }
 
@@ -680,7 +634,9 @@ function loadHomePage() {
     }
     
     if (newArrivalsContainer) {
-        const newArrivals = products.slice(8, 16);
+        // Shuffle products to get random selection from all categories
+        const shuffled = [...products].sort(() => 0.5 - Math.random());
+        const newArrivals = shuffled.slice(0, 8);
         displayProducts(newArrivals, newArrivalsContainer);
     }
 }
@@ -920,6 +876,25 @@ function loadOrderConfirmation() {
     document.getElementById('order-number').textContent = order.orderNumber;
     document.getElementById('order-date').textContent = formatDate(order.orderDate);
     document.getElementById('order-amount').textContent = `$${order.total.toFixed(2)}`;
+    document.getElementById('payment-method').textContent = order.paymentMethod || 'Credit Card';
+    document.getElementById('shipping-address').textContent = order.address || 'N/A';
+    
+    // Populate order items
+    const itemsBody = document.getElementById('order-items-body');
+    if (itemsBody) {
+        let itemsHtml = '';
+        order.items.forEach(item => {
+            itemsHtml += `
+                <tr>
+                    <td style="padding: 10px; border-bottom: 1px solid #ddd;">${item.name}</td>
+                    <td style="padding: 10px; border-bottom: 1px solid #ddd; text-align: center;">${item.quantity}</td>
+                    <td style="padding: 10px; border-bottom: 1px solid #ddd; text-align: right;">$${item.price.toFixed(2)}</td>
+                    <td style="padding: 10px; border-bottom: 1px solid #ddd; text-align: right;">$${(item.price * item.quantity).toFixed(2)}</td>
+                </tr>
+            `;
+        });
+        itemsBody.innerHTML = itemsHtml;
+    }
 }
 
 // Load order tracking page
@@ -934,7 +909,7 @@ function displayProducts(productsToShow, container) {
     let html = '';
     productsToShow.forEach(product => {
         html += `
-            <div class="product-cart">
+            <div class="product-cart" onclick="openProductModal('${product.id}')">
                 <img src="${product.image}" alt="${product.name}">
                 <span>${product.brand}</span>
                 <h4>${product.name}</h4>
@@ -942,7 +917,7 @@ function displayProducts(productsToShow, container) {
                     ${getStarRating(product.rating)}
                 </div>
                 <h4 class="price">$${product.price.toFixed(2)}</h4>
-                <i class="fa-solid fa-cart-shopping buy-icon" onclick="addToCart('${product.id}')"></i>
+                <i class="fa-solid fa-cart-shopping buy-icon" onclick="event.stopPropagation(); openProductModal('${product.id}')"></i>
             </div>
         `;
     });
@@ -1050,6 +1025,7 @@ function clearFilters() {
     const noProducts = document.getElementById('no-products');
     if (noProducts) noProducts.style.display = 'none';
 }
+
 // Print bill from order confirmation page
 function printBill() {
     const order = JSON.parse(localStorage.getItem('currentOrder'));
@@ -1314,35 +1290,6 @@ function generateBillHTML(order) {
     `;
 }
 
-// Update the loadOrderConfirmation function to display items
-function loadOrderConfirmation() {
-    const order = JSON.parse(localStorage.getItem('currentOrder'));
-    if (!order) return;
-    
-    document.getElementById('order-number').textContent = order.orderNumber;
-    document.getElementById('order-date').textContent = formatDate(order.orderDate);
-    document.getElementById('order-amount').textContent = `$${order.total.toFixed(2)}`;
-    document.getElementById('payment-method').textContent = order.paymentMethod || 'Credit Card';
-    document.getElementById('shipping-address').textContent = order.address || 'N/A';
-    
-    // Populate order items
-    const itemsBody = document.getElementById('order-items-body');
-    if (itemsBody) {
-        let itemsHtml = '';
-        order.items.forEach(item => {
-            itemsHtml += `
-                <tr>
-                    <td style="padding: 10px; border-bottom: 1px solid #ddd;">${item.name}</td>
-                    <td style="padding: 10px; border-bottom: 1px solid #ddd; text-align: center;">${item.quantity}</td>
-                    <td style="padding: 10px; border-bottom: 1px solid #ddd; text-align: right;">$${item.price.toFixed(2)}</td>
-                    <td style="padding: 10px; border-bottom: 1px solid #ddd; text-align: right;">$${(item.price * item.quantity).toFixed(2)}</td>
-                </tr>
-            `;
-        });
-        itemsBody.innerHTML = itemsHtml;
-    }
-}
-
 // Update displayTrackingResult to show items
 function displayTrackingResult(order) {
     const trackingResult = document.getElementById('tracking-result');
@@ -1443,30 +1390,392 @@ function loadMyOrders() {
     ordersList.innerHTML = html;
 }
 
-// Update loadPageContent to include my-orders
-function loadPageContent() {
-    const path = window.location.pathname;
-    const fileName = path.split('/').pop() || 'index.html';
+// Show toast notification
+function showToast(message, type = 'success') {
+    const toast = document.getElementById('toast-notification');
+    const toastMessage = document.getElementById('toast-message');
+    const toastIcon = document.querySelector('.toast-icon');
     
-    if (fileName === 'index.html' || fileName === '' || fileName === '/') {
-        loadHomePage();
-    } else if (fileName === 'shop.html') {
-        loadShopPage();
-    } else if (fileName === 'blog.html') {
-        loadBlogPage();
-    } else if (fileName === 'about.html') {
-        loadAboutPage();
-    } else if (fileName === 'contact.html') {
-        loadContactPage();
-    } else if (fileName === 'cart.html') {
-        displayCart();
-    } else if (fileName === 'checkout.html') {
-        loadCheckoutPage();
-    } else if (fileName === 'order-confirmation.html') {
-        loadOrderConfirmation();
-    } else if (fileName === 'order-tracking.html') {
-        loadOrderTrackingPage();
-    } else if (fileName === 'my-orders.html') {
-        loadMyOrders();
+    if (!toast) return;
+    
+    toastMessage.textContent = message;
+    
+    if (type === 'success') {
+        toastIcon.className = 'fa fa-check-circle toast-icon';
+        toast.style.backgroundColor = '#088178';
+    } else if (type === 'error') {
+        toastIcon.className = 'fa fa-exclamation-circle toast-icon';
+        toast.style.backgroundColor = '#dc3545';
+    } else if (type === 'info') {
+        toastIcon.className = 'fa fa-info-circle toast-icon';
+        toast.style.backgroundColor = '#17a2b8';
+    }
+    
+    toast.classList.add('show');
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
+
+// Open product modal
+function openProductModal(productId) {
+    alert('Product clicked: ' + productId); // Add this line temporarily
+    
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+    
+    const modal = document.getElementById('product-modal');
+    const container = document.getElementById('modal-product-container');
+    
+    if (!modal || !container) return;
+    
+    const reviews = productReviews[productId] || [
+        { name: 'John D.', rating: 5, date: '2024-06-01', comment: 'Great product! Highly recommended.' },
+        { name: 'Sarah M.', rating: 4, date: '2024-05-28', comment: 'Good quality and fast shipping.' },
+        { name: 'Mike R.', rating: 5, date: '2024-05-15', comment: 'Excellent value for money.' }
+    ];
+    
+    // Get suggested products (same category, different products)
+    const suggestedProducts = products
+        .filter(p => p.category === product.category && p.id !== product.id)
+        .slice(0, 3);
+    
+    // Get size options based on product type
+    const sizeOptions = getSizeOptions(product.type);
+    
+    // Get color options
+    const colorOptions = product.colors || ['Black', 'White', 'Blue'];
+    
+    // Generate stars HTML
+    const starsHtml = getStarRating(product.rating);
+    
+    // Generate reviews HTML
+    const reviewsHtml = reviews.map(review => `
+        <div class="review-card">
+            <div class="review-header">
+                <span class="reviewer-name">${review.name}</span>
+                <span class="review-rating">${getStarRating(review.rating)}</span>
+            </div>
+            <p class="review-text">${review.comment}</p>
+            <span class="review-date">${formatDate(review.date)}</span>
+        </div>
+    `).join('');
+    
+    // Generate suggested products HTML
+    const suggestedHtml = suggestedProducts.map(p => `
+        <div class="suggested-product" onclick="openProductModal('${p.id}')">
+            <img src="${p.image}" alt="${p.name}">
+            <h5>${p.name}</h5>
+            <span class="price">$${p.price}</span>
+        </div>
+    `).join('');
+    
+    container.innerHTML = `
+        <div class="modal-product-images">
+            <img src="${product.image}" alt="${product.name}" class="modal-main-image" id="modal-main-image">
+            <div class="modal-thumbnails">
+                ${(product.images || [product.image, product.image, product.image]).map((img, index) => `
+                    <img src="${img}" alt="Thumbnail" class="modal-thumbnail" onclick="document.getElementById('modal-main-image').src='${img}'">
+                `).join('')}
+            </div>
+        </div>
+        <div class="modal-product-info">
+            <h2>${product.name}</h2>
+            <span class="brand">${product.brand}</span>
+            <div class="stars">${starsHtml}</div>
+            <div class="price">$${product.price.toFixed(2)}</div>
+            <p class="description">${product.description}</p>
+            
+            <div class="color-section">
+                <h4>Select Color:</h4>
+                <div class="color-options">
+                    ${colorOptions.map(color => `
+                        <div class="color-btn" style="background-color: ${getColorCode(color)};" onclick="selectColor(this, '${color}')"></div>
+                    `).join('')}
+                </div>
+            </div>
+            
+            <div class="size-section">
+                <h4>Select Size:</h4>
+                <div class="size-options" id="size-options">
+                    ${sizeOptions.map(size => `
+                        <button class="size-btn" onclick="selectSize(this, '${size}')">${size}</button>
+                    `).join('')}
+                </div>
+            </div>
+            
+            <div class="quantity-selector">
+                <button class="quantity-btn" onclick="updateModalQuantity(-1)">-</button>
+                <input type="number" class="quantity-input" id="modal-quantity" value="1" min="1" readonly>
+                <button class="quantity-btn" onclick="updateModalQuantity(1)">+</button>
+            </div>
+            
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <button class="add-to-cart-btn" onclick="addToCartFromModal('${product.id}')" style="flex: 1;">
+                    <i class="fa fa-shopping-cart"></i> Add to Cart
+                </button>
+                <button class="add-to-cart-btn" onclick="buyNowFromModal('${product.id}')" style="flex: 1; background-color: #ff6b6b;">
+                    <i class="fa fa-bolt"></i> Buy Now
+                </button>
+            </div>
+            
+            <div class="reviews-section">
+                <h4>Customer Reviews</h4>
+                ${reviewsHtml}
+            </div>
+            
+            ${suggestedProducts.length > 0 ? `
+                <div class="suggested-products">
+                    <h4>You May Also Like</h4>
+                    <div class="suggested-grid">
+                        ${suggestedHtml}
+                    </div>
+                </div>
+            ` : ''}
+        </div>
+    `;
+    
+    modal.style.display = 'block';
+    
+    // Store selected options
+    window.selectedProduct = {
+        id: product.id,
+        color: colorOptions[0],
+        size: sizeOptions[0]
+    };
+    
+    // Auto-select first color and size
+    setTimeout(() => {
+        const firstColor = document.querySelector('.color-btn');
+        const firstSize = document.querySelector('.size-btn');
+        if (firstColor) firstColor.classList.add('active');
+        if (firstSize) firstSize.classList.add('active');
+    }, 100);
+}
+
+// Get size options based on product type
+function getSizeOptions(type) {
+    const shirtSizes = ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
+    const pantSizes = ['28', '30', '32', '34', '36'];
+    const shoeSizes = ['6', '7', '8', '9', '10', '11', '12'];
+    
+    if (type === 'shirt' || type === 'top' || type === 'hoodie' || type === 'sweater' || type === 'jacket' || type === 'blazer' || type === 'cardigan') {
+        return shirtSizes;
+    } else if (type === 'pant' || type === 'jeans' || type === 'leggings' || type === 'skirt' || type === 'shorts') {
+        return pantSizes;
+    } else if (type === 'shoes' || type === 'boots' || type === 'sandals' || type === 'heels' || type === 'sneakers') {
+        return shoeSizes;
+    } else {
+        return ['One Size'];
+    }
+}
+
+// Get color code from color name
+function getColorCode(color) {
+    const colorMap = {
+        'White': '#ffffff',
+        'Black': '#000000',
+        'Blue': '#0000ff',
+        'Red': '#ff0000',
+        'Green': '#00ff00',
+        'Yellow': '#ffff00',
+        'Gray': '#808080',
+        'Brown': '#8b4513',
+        'Navy': '#000080',
+        'Khaki': '#f0e68c',
+        'Olive': '#808000',
+        'Burgundy': '#800020',
+        'Pink': '#ffc0cb',
+        'Beige': '#f5f5dc',
+        'Purple': '#800080',
+        'Orange': '#ffa500',
+        'Silver': '#c0c0c0',
+        'Gold': '#ffd700',
+        'Charcoal': '#36454F',
+        'Tan': '#d2b48c',
+        'Nude': '#f2d2bd'
+    };
+    return colorMap[color] || '#cccccc';
+}
+
+// Select color in modal
+function selectColor(element, color) {
+    document.querySelectorAll('.color-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    element.classList.add('active');
+    if (window.selectedProduct) {
+        window.selectedProduct.color = color;
+    }
+}
+
+// Select size in modal
+function selectSize(element, size) {
+    document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    element.classList.add('active');
+    if (window.selectedProduct) {
+        window.selectedProduct.size = size;
+    }
+}
+
+// Update quantity in modal
+function updateModalQuantity(change) {
+    const input = document.getElementById('modal-quantity');
+    let value = parseInt(input.value) + change;
+    if (value < 1) value = 1;
+    if (value > 10) value = 10;
+    input.value = value;
+}
+
+// Add to cart from modal
+function addToCartFromModal(productId) {
+    const quantity = parseInt(document.getElementById('modal-quantity').value);
+    const selectedSize = window.selectedProduct?.size || getSizeOptions(products.find(p => p.id === productId).type)[0];
+    const selectedColor = window.selectedProduct?.color || (products.find(p => p.id === productId).colors || ['Black'])[0];
+    
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+    
+    const cartItem = {
+        id: product.id + '-' + selectedSize + '-' + selectedColor,
+        productId: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        quantity: quantity,
+        size: selectedSize,
+        color: selectedColor
+    };
+    
+    // Check if item already exists with same size and color
+    const existingItemIndex = cart.findIndex(item => 
+        item.productId === productId && 
+        item.size === selectedSize && 
+        item.color === selectedColor
+    );
+    
+    if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity += quantity;
+    } else {
+        cart.push(cartItem);
+    }
+    
+    saveCart();
+    showToast(`${product.name} (${selectedSize}, ${selectedColor}) added to cart!`);
+    
+    // Close modal
+    document.getElementById('product-modal').style.display = 'none';
+}
+
+// Buy now from modal
+function buyNowFromModal(productId) {
+    // First add to cart
+    addToCartFromModal(productId);
+    
+    // Show toast message
+    showToast('Redirecting to checkout...', 'info');
+    
+    // Then redirect to checkout
+    setTimeout(() => {
+        window.location.href = 'checkout.html';
+    }, 1000);
+}
+
+// Add to cart (quick add)
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+    
+    // For quick add from main page, use default size and color
+    const defaultSize = getSizeOptions(product.type)[0];
+    const defaultColor = (product.colors || ['Black'])[0];
+    
+    const cartItem = {
+        id: product.id + '-' + defaultSize + '-' + defaultColor,
+        productId: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        quantity: 1,
+        size: defaultSize,
+        color: defaultColor
+    };
+    
+    const existingItemIndex = cart.findIndex(item => 
+        item.productId === productId && 
+        item.size === defaultSize && 
+        item.color === defaultColor
+    );
+    
+    if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity += 1;
+    } else {
+        cart.push(cartItem);
+    }
+    
+    saveCart();
+    showToast(`${product.name} added to cart!`);
+}
+
+// Display cart items
+function displayCart() {
+    const cartItems = document.getElementById('cart-items');
+    const emptyCartMessage = document.getElementById('empty-cart-message');
+    const cartSummary = document.getElementById('cart-summary');
+    
+    if (!cartItems) return;
+    
+    if (cart.length === 0) {
+        cartItems.innerHTML = '';
+        if (emptyCartMessage) emptyCartMessage.style.display = 'block';
+        if (cartSummary) cartSummary.style.display = 'none';
+        return;
+    }
+    
+    if (emptyCartMessage) emptyCartMessage.style.display = 'none';
+    if (cartSummary) cartSummary.style.display = 'block';
+    
+    let html = '';
+    let subtotal = 0;
+    
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        
+        html += `
+            <tr>
+                <td><img src="${item.image}" alt="${item.name}" width="50"></td>
+                <td>
+                    ${item.name}<br>
+                    <small>Size: ${item.size}, Color: ${item.color}</small>
+                </td>
+                <td>$${item.price.toFixed(2)}</td>
+                <td>
+                    <div class="quantity-control">
+                        <button class="quantity-btn" onclick="updateCartItemQuantity('${item.id}', ${item.quantity - 1})">-</button>
+                        <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="updateCartItemQuantity('${item.id}', this.value)" readonly>
+                        <button class="quantity-btn" onclick="updateCartItemQuantity('${item.id}', ${item.quantity + 1})">+</button>
+                    </div>
+                </td>
+                <td>$${itemTotal.toFixed(2)}</td>
+                <td><i class="fa fa-trash remove-item" onclick="removeFromCart('${item.id}')"></i></td>
+            </tr>
+        `;
+    });
+    
+    cartItems.innerHTML = html;
+    
+    // Update summary
+    updateCartSummary(subtotal);
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('product-modal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
     }
 }

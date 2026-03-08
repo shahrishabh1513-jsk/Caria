@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/0e53af926d.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <!--header section-->
     <header>
@@ -73,6 +75,32 @@
             </div>
         </section>
 
+        <!-- Brand Slider Section - New Addition -->
+        <section id="brand-slider" class="section-p1">
+            <h2>Shop by Brand</h2>
+            <div class="slider-container">
+                <div class="brand-slider-track">
+                    <div class="brand-slide"><img src="images/brands/nike.png" alt="Nike"></div>
+                    <div class="brand-slide"><img src="images/brands/adidas.png" alt="Adidas"></div>
+                    <div class="brand-slide"><img src="images/brands/puma.png" alt="Puma"></div>
+                    <div class="brand-slide"><img src="images/brands/zara.png" alt="Zara"></div>
+                    <div class="brand-slide"><img src="images/brands/hm.png" alt="H&M"></div>
+                    <div class="brand-slide"><img src="images/brands/gucci.png" alt="Gucci"></div>
+                    <div class="brand-slide"><img src="images/brands/levis.png" alt="Levi's"></div>
+                    <div class="brand-slide"><img src="images/brands/rayban.png" alt="Ray-Ban"></div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="brand-slide"><img src="images/brands/nike.png" alt="Nike"></div>
+                    <div class="brand-slide"><img src="images/brands/adidas.png" alt="Adidas"></div>
+                    <div class="brand-slide"><img src="images/brands/puma.png" alt="Puma"></div>
+                    <div class="brand-slide"><img src="images/brands/zara.png" alt="Zara"></div>
+                    <div class="brand-slide"><img src="images/brands/hm.png" alt="H&M"></div>
+                    <div class="brand-slide"><img src="images/brands/gucci.png" alt="Gucci"></div>
+                    <div class="brand-slide"><img src="images/brands/levis.png" alt="Levi's"></div>
+                    <div class="brand-slide"><img src="images/brands/rayban.png" alt="Ray-Ban"></div>
+                </div>
+            </div>
+        </section>
+
         <section class="product-section section-p1">
             <h1>Featured Products</h1>
             <p>Summer Collection New Modern Design</p>
@@ -87,7 +115,7 @@
 
         <section class="product-section section-p1">
             <h1>New Arrivals</h1>
-            <p>Summer Collection New Modern Design</p>
+            <p>Check out our latest products across all categories</p>
             <div class="pro-collection" id="new-arrivals"></div>
         </section>
 
@@ -167,6 +195,7 @@
                 <h3>My account</h3>
                 <a href="login.html">Sign In</a>
                 <a href="cart.html">View Cart</a>
+                <a href="my-orders.html">My Orders</a>
                 <a href="#">My Wishlist</a>
                 <a href="order-tracking.html">Track My Order</a>
                 <a href="#">Help</a>
@@ -187,6 +216,25 @@
         </div>
     </footer>
 
+    <!-- Product Quick View Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-product-container" id="modal-product-container">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="toast">
+        <div class="toast-content">
+            <i class="fa fa-check-circle toast-icon"></i>
+            <div class="toast-message" id="toast-message"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
