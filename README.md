@@ -76,8 +76,6 @@
 
 </div>
 
-> 💡 **Setup note:** Save the attached screenshot as `assets/cara-preview-hero.png` in your repo root so the top preview image renders on GitHub. The second image (below it) is a live auto-updating screenshot and needs no setup.
-
 <div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:E8C39E,100:0F7173&height=3&section=header"/></div>
 
 ## 📖 About The Project
