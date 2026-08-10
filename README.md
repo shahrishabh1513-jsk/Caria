@@ -3,10 +3,12 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:C31432,100:240B36&height=200&section=header&text=Caria%20%7C%20FashionHub%20India&fontSize=34&fontColor=ffffff&animation=fadeIn&fontAlignY=42&desc=Trendy%20Fashion%2C%20Delivered%20✨&descAlignY=65&descSize=17"/>
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&pause=1200&color=C31432&center=true&vCenter=true&width=700&lines=A+Full-Featured+Fashion+E-Commerce+Website;Shop+%7C+Cart+%7C+Wishlist+%7C+Order+Tracking;Built+with+HTML%2C+CSS+%26+JavaScript;Responsive.+Modern.+Ready+to+Shop." alt="Typing SVG" />
+
 <br/>
-<a href="https://shahrishabh1513-jsk.github.io/Caria/"><img src="https://img.shields.io/badge/🔴_LIVE_DEMO-Visit_Store-C31432?style=for-the-badge&logoColor=white"/></a>
-<a href="https://github.com/shahrishabh1513-jsk/Caria"><img src="https://img.shields.io/badge/📂_REPOSITORY-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
-<a href="https://github.com/shahrishabh1513-jsk/Caria/stargazers"><img src="https://img.shields.io/badge/⭐_STAR_REPO-240B36?style=for-the-badge&logoColor=white"/></a>
+
+<a href="https://shahrishabh1513-jsk.github.io/Caria/"><img src="https://img.shields.io/badge/LIVE_DEMO-Visit_Store-C31432?style=for-the-badge&logo=googlechrome&logoColor=white"/></a>
+<a href="https://github.com/shahrishabh1513-jsk/Caria"><img src="https://img.shields.io/badge/REPOSITORY-View_Code-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
+<a href="https://github.com/shahrishabh1513-jsk/Caria/stargazers"><img src="https://img.shields.io/badge/STAR-Support_This_Repo-FFD700?style=for-the-badge&logo=github&logoColor=black"/></a>
 
 <br/><br/>
 
@@ -37,7 +39,7 @@
 
 <div align="center">
 
-[Preview](#-live-preview) · [About](#-about-the-project) · [Features](#-key-features) · [Site Map](#-site-map) · [Tech Stack](#️-tech-stack) · [Structure](#-folder-structure) · [Setup](#-getting-started) · [Connect](#-connect)
+[Preview](#-live-preview) · [About](#-about-the-project) · [Features](#-key-features) · [Site Map](#-site-map) · [How It Works](#-how-it-works) · [Tech Stack](#️-tech-stack) · [Structure](#-folder-structure) · [Setup](#-getting-started) · [Connect](#-connect)
 
 </div>
 
@@ -48,7 +50,7 @@
 <div align="center">
 
 <a href="https://shahrishabh1513-jsk.github.io/Caria/" target="_blank">
-  <img src="https://api.microlink.io/?url=https%3A%2F%2Fshahrishabh1513-jsk.github.io%2FCaria%2F&screenshot=true&meta=false&embed=screenshot.url&waitFor=2000" alt="Caria FashionHub India Preview" width="90%" style="border-radius:12px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);"/>
+  <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fshahrishabh1513-jsk.github.io%2FCaria%2F?w=1200" alt="Caria FashionHub India Preview" width="90%" style="border-radius:12px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);"/>
 </a>
 
 <sub>👆 Click the preview to explore the live store</sub>
@@ -56,7 +58,7 @@
 <br/><br/>
 
 <a href="https://shahrishabh1513-jsk.github.io/Caria/" target="_blank">
-  <img src="https://img.shields.io/badge/🛍️_Start_Shopping-C31432?style=for-the-badge&logoColor=white"/>
+  <img src="https://img.shields.io/badge/START_SHOPPING-Explore_The_Store-C31432?style=for-the-badge&logo=shopify&logoColor=white"/>
 </a>
 
 </div>
@@ -150,6 +152,23 @@ This project was built to practice real-world **front-end e-commerce architectur
 </div>
 
 <div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:C31432,100:240B36&height=3&section=header"/></div>
+
+## 🧭 How It Works
+
+<div align="center">
+
+**Home** → **Browse Brands / Shop** → **Add to Cart** → **Login** → **Checkout** → **Order Tracking**
+
+</div>
+
+1. Land on the **Home** page — browse deals, featured products, and brand highlights.
+2. Head to **Shop** to explore the full product catalog.
+3. Add items to the **Cart** (view and update quantities anytime).
+4. **Sign In** to your account to proceed with a purchase.
+5. Complete the **checkout** flow.
+6. Track your purchase anytime from **My Orders → Order Tracking**.
+
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:240B36,100:C31432&height=3&section=header"/></div>
 
 ## 🛠️ Tech Stack
 
