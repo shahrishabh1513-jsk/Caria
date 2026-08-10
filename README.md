@@ -58,6 +58,7 @@
 <div align="center">
 
 <img src="https://github.com/user-attachments/assets/0f0483c0-2653-4216-bf79-3d43d8e8c579" alt="Cara — Home Page Hero" width="90%" style="border-radius:12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);"/>
+
 <sub>Home page hero — see setup note below to add this image to your repo</sub>
 
 <br/>
