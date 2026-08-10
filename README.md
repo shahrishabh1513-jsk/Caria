@@ -39,7 +39,15 @@
 
 <div align="center">
 
-[Preview](#-live-preview) · [About](#-about-the-project) · [Features](#-key-features) · [Site Map](#-site-map) · [Workflow](#-user-workflow) · [Tech Stack](#️-tech-stack) · [Structure](#-folder-structure) · [Setup](#-getting-started) · [Connect](#-connect)
+[![Preview](https://img.shields.io/badge/🔍_Preview-0F7173?style=for-the-badge)](#-live-preview)
+[![About](https://img.shields.io/badge/📖_About-1D7D75?style=for-the-badge)](#-about-the-project)
+[![Features](https://img.shields.io/badge/✨_Features-2B8977?style=for-the-badge)](#-key-features)
+[![Site Map](https://img.shields.io/badge/🗺️_Site_Map-399579?style=for-the-badge)](#-site-map)
+[![Workflow](https://img.shields.io/badge/🧭_Workflow-47A17B?style=for-the-badge)](#-user-workflow)
+[![Tech Stack](https://img.shields.io/badge/🛠️_Tech_Stack-55AD7D?style=for-the-badge)](#️-tech-stack)
+[![Structure](https://img.shields.io/badge/📂_Structure-A6C88C?style=for-the-badge&labelColor=63B97F)](#-folder-structure)
+[![Setup](https://img.shields.io/badge/🚀_Setup-D0BE96?style=for-the-badge&labelColor=71C5A1)](#-getting-started)
+[![Connect](https://img.shields.io/badge/🤝_Connect-E8C39E?style=for-the-badge&logoColor=black)](#-connect)
 
 </div>
 
@@ -49,14 +57,12 @@
 
 <div align="center">
 
-<img src="./assets/cara-preview-hero.png" alt="Cara — Home Page Hero" width="90%" style="border-radius:12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);"/>
-
+<img src="https://github.com/user-attachments/assets/0f0483c0-2653-4216-bf79-3d43d8e8c579" alt="Cara — Home Page Hero" width="90%" style="border-radius:12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);"/>
 <sub>Home page hero — see setup note below to add this image to your repo</sub>
 
-<br/><br/>
+<br/>
 
 <a href="https://shahrishabh1513-jsk.github.io/Caria/" target="_blank">
-  <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fshahrishabh1513-jsk.github.io%2FCaria%2F?w=1200" alt="Cara Live Preview" width="90%" style="border-radius:12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);"/>
 </a>
 
 <sub>👆 Click to explore the live store</sub>
