@@ -10,7 +10,7 @@
 <a href="https://github.com/shahrishabh1513-jsk/Caria"><img src="https://img.shields.io/badge/REPOSITORY-View_Code-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
 <a href="https://github.com/shahrishabh1513-jsk/Caria/stargazers"><img src="https://img.shields.io/badge/STAR-Support_This_Repo-E8C39E?style=for-the-badge&logo=github&logoColor=black"/></a>
 
-<br/><br/>
+<br/>
 
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
@@ -66,9 +66,7 @@
 <a href="https://shahrishabh1513-jsk.github.io/Caria/" target="_blank">
 </a>
 
-<sub>👆 Click to explore the live store</sub>
-
-<br/><br/>
+<br/>
 
 <a href="https://shahrishabh1513-jsk.github.io/Caria/" target="_blank">
   <img src="https://img.shields.io/badge/START_SHOPPING-Explore_The_Store-0F7173?style=for-the-badge&logo=shopify&logoColor=white"/>
