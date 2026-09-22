@@ -1,6 +1,18 @@
-<div align="center">
-
+<table width="100%">
+<tr>
+<td width="15%" align="center">
+<img src="https://github.com/user-attachments/assets/90c19f97-8b0b-4df1-96c4-a288d337503c" width="110" alt="Shah Rishabh badge logo"/>
+</td>
+<td width="70%" align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F7173,100:E8C39E&height=200&section=header&text=Cara&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Trendy%20Fashion%2C%20Delivered%20✨&descAlignY=62&descSize=18"/>
+</td>
+<td width="15%" align="center">
+<img src="https://github.com/user-attachments/assets/41de0edc-f0a3-474a-9156-d8b3d10d41ba" width="110" alt="Shah Rishabh badge logo"/>
+</td>
+</tr>
+</table>
+
+<div align="center">
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&pause=1200&color=0F7173&center=true&vCenter=true&width=700&lines=A+Full-Featured+Fashion+E-Commerce+Website;Shop+%7C+Cart+%7C+Wishlist+%7C+Order+Tracking;Built+with+HTML%2C+CSS+%26+JavaScript;Responsive.+Modern.+Ready+to+Shop." alt="Typing SVG" />
 
