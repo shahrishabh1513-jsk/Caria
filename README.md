@@ -4,7 +4,7 @@
 <img src="https://github.com/user-attachments/assets/90c19f97-8b0b-4df1-96c4-a288d337503c" width="110" alt="Shah Rishabh badge logo"/>
 </td>
 <td width="70%" align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F7173,100:E8C39E&height=200&section=header&text=Cara&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Trendy%20Fashion%2C%20Delivered%20✨&descAlignY=62&descSize=18"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6B7F2F,100:C2562F&height=200&section=header&text=Cara&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Trendy%20Fashion%2C%20Delivered%20✨&descAlignY=62&descSize=18"/>
 </td>
 <td width="15%" align="center">
 <img src="https://github.com/user-attachments/assets/41de0edc-f0a3-474a-9156-d8b3d10d41ba" width="110" alt="Shah Rishabh badge logo"/>
@@ -14,13 +14,14 @@
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&pause=1200&color=0F7173&center=true&vCenter=true&width=700&lines=A+Full-Featured+Fashion+E-Commerce+Website;Shop+%7C+Cart+%7C+Wishlist+%7C+Order+Tracking;Built+with+HTML%2C+CSS+%26+JavaScript;Responsive.+Modern.+Ready+to+Shop." alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&pause=1200&color=C2562F&center=true&vCenter=true&width=700&lines=A+Full-Featured+Fashion+E-Commerce+Website;Shop+%7C+Cart+%7C+Wishlist+%7C+Order+Tracking;Built+with+HTML%2C+CSS+%26+JavaScript;Responsive.+Modern.+Ready+to+Shop." alt="Typing SVG" />
 
 <br/>
 
-<a href="https://shahrishabh1513-jsk.github.io/Caria/"><img src="https://img.shields.io/badge/LIVE_DEMO-Visit_Store-0F7173?style=for-the-badge&logo=googlechrome&logoColor=white"/></a>
+<a href="https://shahrishabh1513-jsk.github.io/Caria/"><img src="https://img.shields.io/badge/LIVE_DEMO-Visit_Store-C2562F?style=for-the-badge&logo=googlechrome&logoColor=white"/></a>
+<a href="https://github.com/shahrishabh1513-jsk/Caria/blob/main/Caria_FashionHub_Project_Report.pdf"><img src="https://img.shields.io/badge/📄_PROJECT_REPORT-Read_PDF-6B7F2F?style=for-the-badge"/></a>
 <a href="https://github.com/shahrishabh1513-jsk/Caria"><img src="https://img.shields.io/badge/REPOSITORY-View_Code-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
-<a href="https://github.com/shahrishabh1513-jsk/Caria/stargazers"><img src="https://img.shields.io/badge/STAR-Support_This_Repo-E8C39E?style=for-the-badge&logo=github&logoColor=black"/></a>
+<a href="https://github.com/shahrishabh1513-jsk/Caria/stargazers"><img src="https://img.shields.io/badge/STAR-Support_This_Repo-E9D8A6?style=for-the-badge&logo=github&logoColor=black"/></a>
 
 <br/>
 
@@ -31,7 +32,7 @@
 
 <br/>
 
-<img src="https://img.shields.io/github/last-commit/shahrishabh1513-jsk/Caria?style=flat-square&color=0F7173&label=Last%20Updated"/>
+<img src="https://img.shields.io/github/last-commit/shahrishabh1513-jsk/Caria?style=flat-square&color=6B7F2F&label=Last%20Updated"/>
 <img src="https://img.shields.io/badge/Status-Live%20✅-brightgreen?style=flat-square"/>
 <img src="https://img.shields.io/badge/Responsive-100%25-success?style=flat-square"/>
 <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square"/>
@@ -51,42 +52,39 @@
 
 <div align="center">
 
-[![Preview](https://img.shields.io/badge/🔍_Preview-0F7173?style=for-the-badge)](#-live-preview)
-[![About](https://img.shields.io/badge/📖_About-1D7D75?style=for-the-badge)](#-about-the-project)
-[![Features](https://img.shields.io/badge/✨_Features-2B8977?style=for-the-badge)](#-key-features)
-[![Site Map](https://img.shields.io/badge/🗺️_Site_Map-399579?style=for-the-badge)](#-site-map)
-[![Workflow](https://img.shields.io/badge/🧭_Workflow-47A17B?style=for-the-badge)](#-user-workflow)
-[![Tech Stack](https://img.shields.io/badge/🛠️_Tech_Stack-55AD7D?style=for-the-badge)](#️-tech-stack)
-[![Structure](https://img.shields.io/badge/📂_Structure-A6C88C?style=for-the-badge&labelColor=63B97F)](#-folder-structure)
-[![Setup](https://img.shields.io/badge/🚀_Setup-D0BE96?style=for-the-badge&labelColor=71C5A1)](#-getting-started)
-[![Connect](https://img.shields.io/badge/🤝_Connect-E8C39E?style=for-the-badge&logoColor=black)](#-connect)
+[![Preview](https://img.shields.io/badge/🔍_Preview-6B7F2F?style=for-the-badge)](#-live-preview)
+[![About](https://img.shields.io/badge/📖_About-81752F?style=for-the-badge)](#-about-the-project)
+[![Features](https://img.shields.io/badge/✨_Features-976B2F?style=for-the-badge)](#-key-features)
+[![Site Map](https://img.shields.io/badge/🗺️_Site_Map-AC602F?style=for-the-badge)](#-site-map)
+[![Workflow](https://img.shields.io/badge/🧭_Workflow-C2562F?style=for-the-badge)](#-user-workflow)
+[![Tech Stack](https://img.shields.io/badge/🛠️_Tech_Stack-CC774D?style=for-the-badge)](#️-tech-stack)
+[![Structure](https://img.shields.io/badge/📂_Structure-D6976B?style=for-the-badge&logoColor=black)](#-folder-structure)
+[![Setup](https://img.shields.io/badge/🚀_Setup-DFB888?style=for-the-badge&logoColor=black)](#-getting-started)
+[![Connect](https://img.shields.io/badge/🤝_Connect-E9D8A6?style=for-the-badge&logoColor=black)](#-connect)
 
 </div>
 
-<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:0F7173,100:E8C39E&height=3&section=header"/></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:6B7F2F,50:C2562F,100:E9D8A6&height=3&section=header"/></div>
 
 ## 🔍 Live Preview
 
 <div align="center">
 
-<img src="https://github.com/user-attachments/assets/0f0483c0-2653-4216-bf79-3d43d8e8c579" alt="Cara — Home Page Hero" width="90%" style="border-radius:12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);"/>
-
-<sub>Home page hero — see setup note below to add this image to your repo</sub>
-
-<br/>
-
 <a href="https://shahrishabh1513-jsk.github.io/Caria/" target="_blank">
+<img src="https://github.com/user-attachments/assets/0f0483c0-2653-4216-bf79-3d43d8e8c579" alt="Cara — Home Page Hero" width="90%" style="border-radius:12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2);"/>
 </a>
 
-<br/>
+<sub>👆 Click to explore the live store</sub>
+
+<br/><br/>
 
 <a href="https://shahrishabh1513-jsk.github.io/Caria/" target="_blank">
-  <img src="https://img.shields.io/badge/START_SHOPPING-Explore_The_Store-0F7173?style=for-the-badge&logo=shopify&logoColor=white"/>
+  <img src="https://img.shields.io/badge/START_SHOPPING-Explore_The_Store-C2562F?style=for-the-badge&logo=shopify&logoColor=white"/>
 </a>
 
 </div>
 
-<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:E8C39E,100:0F7173&height=3&section=header"/></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:E9D8A6,50:C2562F,100:6B7F2F&height=3&section=header"/></div>
 
 ## 📖 About The Project
 
@@ -107,7 +105,7 @@ This project was built to practice real-world **front-end e-commerce architectur
 
 </div>
 
-<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:0F7173,100:E8C39E&height=3&section=header"/></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:6B7F2F,50:C2562F,100:E9D8A6&height=3&section=header"/></div>
 
 ## ✨ Key Features
 
@@ -154,7 +152,7 @@ This project was built to practice real-world **front-end e-commerce architectur
 </tr>
 </table>
 
-<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:E8C39E,100:0F7173&height=3&section=header"/></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:E9D8A6,50:C2562F,100:6B7F2F&height=3&section=header"/></div>
 
 ## 🗺️ Site Map
 
@@ -174,7 +172,7 @@ This project was built to practice real-world **front-end e-commerce architectur
 
 </div>
 
-<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:0F7173,100:E8C39E&height=3&section=header"/></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:6B7F2F,50:C2562F,100:E9D8A6&height=3&section=header"/></div>
 
 ## 🧭 User Workflow
 
@@ -191,7 +189,7 @@ flowchart LR
     H --> I[🚚 Order Tracking]
 ```
 
-<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:E8C39E,100:0F7173&height=3&section=header"/></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:E9D8A6,50:C2562F,100:6B7F2F&height=3&section=header"/></div>
 
 ## 🛠️ Tech Stack
 
@@ -207,7 +205,7 @@ flowchart LR
 
 </div>
 
-<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:0F7173,100:E8C39E&height=3&section=header"/></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:6B7F2F,50:C2562F,100:E9D8A6&height=3&section=header"/></div>
 
 ## 📂 Folder Structure
 
@@ -232,6 +230,7 @@ Caria/
 ├── cart.html                                                        # Shopping cart
 ├── my-orders.html                                                       # Order history
 ├── order-tracking.html                                                       # Order tracking
+├── Caria_FashionHub_Project_Report.pdf                                           # Project report
 │
 ├── css/
 │   └── style.css                                                                  # All styles
@@ -243,7 +242,7 @@ Caria/
 └── README.md                                                                                  # Project documentation
 ```
 
-<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:E8C39E,100:0F7173&height=3&section=header"/></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:E9D8A6,50:C2562F,100:6B7F2F&height=3&section=header"/></div>
 
 ## 🚀 Getting Started
 
@@ -260,7 +259,7 @@ cd Caria
 
 ✅ No build tools, dependencies, or installations required — it's a pure **HTML/CSS/JS** project. Just open and start shopping!
 
-<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:0F7173,100:E8C39E&height=3&section=header"/></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:6B7F2F,50:C2562F,100:E9D8A6&height=3&section=header"/></div>
 
 ## 🧭 Roadmap
 
@@ -272,7 +271,7 @@ cd Caria
 - [ ] 🔍 Product search & filtering
 - [ ] 🌙 Dark mode
 
-<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:E8C39E,100:0F7173&height=3&section=header"/></div>
+<div align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=0:E9D8A6,50:C2562F,100:6B7F2F&height=3&section=header"/></div>
 
 ## 🤝 Connect
 
@@ -280,9 +279,9 @@ cd Caria
 
 **Rishabh Alpeshabhai Shah**
 
-<a href="https://rishabh-shah-portfolio.netlify.app/"><img src="https://img.shields.io/badge/Portfolio-0F7173?style=for-the-badge&logo=netlify&logoColor=white"/></a>
+<a href="https://rishabh-shah-portfolio.netlify.app/"><img src="https://img.shields.io/badge/Portfolio-6B7F2F?style=for-the-badge&logo=netlify&logoColor=white"/></a>
 <a href="https://www.linkedin.com/in/rishabh-alpeshabhai-shah-91b9072a6/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-<a href="mailto:shahrishu1515@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="mailto:shahrishu1515@gmail.com"><img src="https://img.shields.io/badge/Email-C2562F?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 <a href="https://github.com/shahrishabh1513-jsk"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
 
 </div>
@@ -293,12 +292,12 @@ cd Caria
 
 ### ⭐ If you like this project, give it a star — it helps a lot!
 
-<img src="https://komarev.com/ghpvc/?username=cara-fashion-store&label=Repo%20Views&color=E8C39E&style=for-the-badge" alt="Repo Views" />
+<img src="https://komarev.com/ghpvc/?username=cara-fashion-store&label=Repo%20Views&color=C2562F&style=for-the-badge" alt="Repo Views" />
 
 <br/>
 
 **Made with 🛍️ & 💖 by Rishabh Shah**
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:E8C39E,100:0F7173&height=120&section=footer"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:E9D8A6,50:C2562F,100:6B7F2F&height=120&section=footer"/>
 
 </div>
